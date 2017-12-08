@@ -1,13 +1,12 @@
 //
-//  AvailabilityProjectTests.swift
-//  AvailabilityProjectTests
+//  AvailabilityBatcherTests.swift
+//  AvailabilityBatcherTests
 //
 //  Created by Wesley St. John on 12/7/17.
 //  Copyright © 2017 mobileforming. All rights reserved.
 //
 
 import XCTest
-import UIKit
 @testable import AvailabilityProject
 
 class AvailabilityBatcherTests: XCTestCase {
@@ -26,11 +25,8 @@ class AvailabilityBatcherTests: XCTestCase {
             numBatchesFired += 1
             
             DispatchQueue.global().asyncAfter(deadline: .now() + 0.1 + Double(numBatchesFired) * 0.2, execute: {
-                
                 completion()
-                
                 self.numBatchesCompleted += 1
-                print("Batches completed: \(self.numBatchesCompleted)")
             })
         }
     }
@@ -41,7 +37,6 @@ class AvailabilityBatcherTests: XCTestCase {
     }
     
     func testExtendPoolWithOneBatch() {
-        
         expectation = keyValueObservingExpectation(for: self, keyPath: "numBatchesCompleted", handler: { (object, dict) -> Bool in
             return true
         })
@@ -52,9 +47,7 @@ class AvailabilityBatcherTests: XCTestCase {
         waitForExpectations(timeout: 1.0, handler: nil)
         XCTAssertEqual(batcher.pendingPool, [])
         XCTAssertEqual(batcher.batchedPool, [])
-
     }
-
     
     func testExtendPoolWithMultipleBatches() {
         expectation = keyValueObservingExpectation(for: self, keyPath: "numBatchesCompleted", handler: { (object, dict) -> Bool in
@@ -80,6 +73,5 @@ class AvailabilityBatcherTests: XCTestCase {
         batcher.drainPool()
         XCTAssertEqual(batcher.batchedPool, [])
     }
-    
     
 }

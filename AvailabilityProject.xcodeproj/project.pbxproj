@@ -12,8 +12,9 @@
 		651D91771FDA124E0089C432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651D91751FDA124E0089C432 /* Main.storyboard */; };
 		651D91791FDA124E0089C432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651D91781FDA124E0089C432 /* Assets.xcassets */; };
 		651D917C1FDA124E0089C432 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651D917A1FDA124E0089C432 /* LaunchScreen.storyboard */; };
-		651D91871FDA124E0089C432 /* AvailabilityProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D91861FDA124E0089C432 /* AvailabilityProjectTests.swift */; };
+		651D91871FDA124E0089C432 /* AvailabilityBatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D91861FDA124E0089C432 /* AvailabilityBatcherTests.swift */; };
 		651D91921FDA12780089C432 /* Sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D91911FDA12780089C432 /* Sources.swift */; };
+		654BCB641FDB262B00676D74 /* AvailabilityManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654BCB631FDB262B00676D74 /* AvailabilityManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +36,10 @@
 		651D917B1FDA124E0089C432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		651D917D1FDA124E0089C432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		651D91821FDA124E0089C432 /* AvailabilityProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvailabilityProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		651D91861FDA124E0089C432 /* AvailabilityProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityProjectTests.swift; sourceTree = "<group>"; };
+		651D91861FDA124E0089C432 /* AvailabilityBatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityBatcherTests.swift; sourceTree = "<group>"; };
 		651D91881FDA124E0089C432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		651D91911FDA12780089C432 /* Sources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources.swift; sourceTree = "<group>"; };
+		654BCB631FDB262B00676D74 /* AvailabilityManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,8 @@
 		651D91851FDA124E0089C432 /* AvailabilityProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				651D91861FDA124E0089C432 /* AvailabilityProjectTests.swift */,
+				651D91861FDA124E0089C432 /* AvailabilityBatcherTests.swift */,
+				654BCB631FDB262B00676D74 /* AvailabilityManagerTests.swift */,
 				651D91881FDA124E0089C432 /* Info.plist */,
 			);
 			path = AvailabilityProjectTests;
@@ -212,7 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				651D91871FDA124E0089C432 /* AvailabilityProjectTests.swift in Sources */,
+				654BCB641FDB262B00676D74 /* AvailabilityManagerTests.swift in Sources */,
+				651D91871FDA124E0089C432 /* AvailabilityBatcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,7 +3,7 @@
 import Foundation
 import UIKit
 
-struct AvailabilityCriteria {
+public struct AvailabilityCriteria {
     var arrivalDate: Date
     var departureDate: Date
     var numRooms: Int
@@ -11,7 +11,11 @@ struct AvailabilityCriteria {
     var numChildren: Int
     var useHonorsPoints: Bool
     var AAAFlag: Bool
-    var corporateId: String
+    var corporateId: String?
+    
+    public static func stubCriteria() -> AvailabilityCriteria {
+        return AvailabilityCriteria(arrivalDate: Date(), departureDate: Date().addingTimeInterval(60*60*24), numRooms: 1, numAdults: 1, numChildren: 0, useHonorsPoints: false, AAAFlag: false, corporateId: nil)
+    }
 }
 
 struct Availability {
@@ -20,9 +24,13 @@ struct Availability {
     var currency: String?
 }
 
-struct CtyhocnAvailability {
+struct CtyhocnAvailability: Equatable {
     var ctyhocn: String
-    var availability: Availability?
+    var availability: String?
+    public static func ==(lhs: CtyhocnAvailability, rhs: CtyhocnAvailability) -> Bool {
+        return lhs.ctyhocn == rhs.ctyhocn &&
+            lhs.availability == rhs.availability
+    }
 }
 
 //////////////////////////////////////////////////////////
@@ -114,10 +122,8 @@ class AvailabilityBatcher: Batcher {
 ////////////////////////////////////////////////////////////
 
 protocol AvailabilityStore {
-    
     func saveAvailability(_ availability: [CtyhocnAvailability])
     func clearAvailability()
-    
 }
 
 class AvailabilityManager {
